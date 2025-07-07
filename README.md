@@ -1,5 +1,7 @@
 # AbsoluteVanish
 The AbsoluteVanish plugin is a plugin that make players completely vanish.
+Players who vanish via /vanish are not recognizable by anyone other than other vanished players, even op players.
+
 
 ## Features
 - player vanish/unvanish
