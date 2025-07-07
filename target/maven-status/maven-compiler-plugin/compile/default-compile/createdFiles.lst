@@ -1,0 +1,14 @@
+me\ujun\utils\VanishManager.class
+me\ujun\commands\AbsoluteVanishCMD.class
+me\ujun\commands\CommandTabCompleter.class
+me\ujun\saving\DataFile.class
+me\ujun\listeners\ItemPickupListener.class
+me\ujun\listeners\TabCompleterListener.class
+me\ujun\listeners\PingServerListener.class
+me\ujun\AbsoluteVanish.class
+me\ujun\listeners\TargetListener.class
+me\ujun\AbsoluteVanish$1.class
+me\ujun\config\ConfigHandler.class
+me\ujun\listeners\PlayerJoinListener.class
+me\ujun\listeners\PlayerQuitListener.class
+me\ujun\commands\VanishCMD.class

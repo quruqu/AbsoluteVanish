@@ -1,0 +1,11 @@
+
+#if you use DiscordSRV and want use this features, set DiscordSRV config to false
+DiscordEnabled: true
+
+DiscordFirstJoinMessage: "%player% joined the server for the first time"
+DiscordJoinMessage: "%player% joined the server"
+DiscordQuitMessage: "%player% left the server"
+
+TabCompleteFilterCommands:
+  - /co
+  - /coreprotect:co

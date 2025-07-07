@@ -1,0 +1,22 @@
+name: AbsoluteVanish
+version: '1.0.0'
+main: me.ujun.AbsoluteVanish
+api-version: '1.21'
+softdepend: [DiscordSRV]
+
+permissions:
+  absolutevanish.vanish:
+    default: op
+    description: use the /vanish command
+  absolutevanish.absolutevanish:
+    default: op
+    description: use the /absolutevanish command
+
+
+commands:
+  vanish:
+    permission: absolutevanish.vanish
+    description: Hides a player from other players
+  absolutevanish:
+    permission: abolutevanish.absolutevanish
+    description: manage the AbsoluteVanish plugin
