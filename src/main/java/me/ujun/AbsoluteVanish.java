@@ -23,8 +23,6 @@ public final class AbsoluteVanish extends JavaPlugin {
         dataFile = new DataFile(getDataFolder());
         dataFile.loadSets(VanishManager.vanishedPlayers);
 
-
-
         ConfigHandler.init(this);
         VanishManager.init(this);
 
@@ -53,6 +51,8 @@ public final class AbsoluteVanish extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
         this.getServer().getPluginManager().registerEvents(new TargetListener(), this);
         this.getServer().getPluginManager().registerEvents(new TabCompleterListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+        this.getServer().getPluginManager().registerEvents(new AdvancementListener(), this);
 
     }
 

@@ -4,7 +4,9 @@ me\ujun\commands\CommandTabCompleter.class
 me\ujun\saving\DataFile.class
 me\ujun\listeners\ItemPickupListener.class
 me\ujun\listeners\TabCompleterListener.class
+me\ujun\listeners\AdvancementListener.class
 me\ujun\listeners\PingServerListener.class
+me\ujun\listeners\PlayerDeathListener.class
 me\ujun\AbsoluteVanish.class
 me\ujun\listeners\TargetListener.class
 me\ujun\AbsoluteVanish$1.class
