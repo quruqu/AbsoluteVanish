@@ -6,6 +6,8 @@ DiscordFirstJoinMessage: "%player% joined the server for the first time"
 DiscordJoinMessage: "%player% joined the server"
 DiscordQuitMessage: "%player% left the server"
 
+defaultQuitMessage: "&e%player% left the server"
+
 TabCompleteFilterCommands:
   - /co
   - /coreprotect:co

@@ -14,6 +14,7 @@ public class VanishManager {
     private final JavaPlugin plugin;
     private static VanishManager instance;
     public static final Set<UUID> vanishedPlayers = new HashSet<>();
+    public static String currentQuitMessage;
 
     public VanishManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -25,6 +26,7 @@ public class VanishManager {
 
     public static void init(JavaPlugin plugin) {
         instance = new VanishManager(plugin);
+        currentQuitMessage = ConfigHandler.defaultQuitMessage;
     }
 
     public static boolean isVanished(Player player) { return vanishedPlayers.contains(player.getUniqueId()); }

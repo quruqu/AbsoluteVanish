@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class CommandTabCompleter implements TabCompleter {
 
-    private final List<String> SUBCOMMANDS = Arrays.asList("reload", "list", "vanish", "unvanish");
+    private final List<String> SUBCOMMANDS = Arrays.asList("reload", "list", "vanish", "unvanish", "fakequitmessage");
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -31,7 +31,7 @@ public class CommandTabCompleter implements TabCompleter {
                         .collect(Collectors.toList());
             }
             else if (args.length == 2) {
-                if (args[0].equals("vanish")) {
+                if (args[0].equals("vanish") || args[0].equals("fakequitmessage")) {
                     for (Player player : Bukkit.getOnlinePlayers()) {
                         String name = player.getName();
 
@@ -51,7 +51,6 @@ public class CommandTabCompleter implements TabCompleter {
                             completion.add(name);
                         }
                     }
-
                     return completion;
                 }
                 else {

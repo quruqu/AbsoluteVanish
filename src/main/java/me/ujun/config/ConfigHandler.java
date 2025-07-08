@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigHandler {
@@ -16,6 +15,7 @@ public class ConfigHandler {
     public static String discordQuitMessage;
     public static String discordFirstJoinMessage;
     public static boolean discordEnabled;
+    public static String defaultQuitMessage;
     private List<String> filteredCommands;
     public static boolean isDiscordEnabled = false;
 
@@ -40,6 +40,8 @@ public class ConfigHandler {
         discordQuitMessage = config.getString("DiscordQuitMessage");
         discordFirstJoinMessage = config.getString("DiscordFirstJoinMessage");
         discordEnabled = config.getBoolean("DiscordEnabled");
+
+        defaultQuitMessage = config.getString("defaultQuitMessage");
 
         filteredCommands = config.getStringList("TabCompleteFilterCommands");
 

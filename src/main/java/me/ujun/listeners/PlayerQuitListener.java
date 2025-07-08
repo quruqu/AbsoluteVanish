@@ -22,6 +22,8 @@ public class PlayerQuitListener implements Listener {
         if (VanishManager.isVanished(player)) {
             event.setQuitMessage(null);
         } else {
+            VanishManager.currentQuitMessage = event.getQuitMessage();
+
             if (ConfigHandler.isDiscordEnabled) {
                 sendQuitEmbed(player);
             }

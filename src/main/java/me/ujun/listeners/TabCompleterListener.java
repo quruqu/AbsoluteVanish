@@ -22,7 +22,9 @@ public class TabCompleterListener implements Listener {
 
         String buffer = event.getBuffer();
 
-        ConfigHandler.getInstance().shouldFilter(buffer);
+        if (!ConfigHandler.getInstance().shouldFilter(buffer)) {
+            return;
+        }
 
         List<String> completions = event.getCompletions();
 

@@ -42,7 +42,6 @@ public class PlayerJoinListener implements Listener {
                 }
             }
         } else {
-
             //discordSRV
             if (ConfigHandler.isDiscordEnabled) {
                 if (player.hasPlayedBefore()) {
