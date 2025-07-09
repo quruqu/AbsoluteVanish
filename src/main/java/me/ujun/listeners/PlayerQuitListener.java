@@ -25,26 +25,8 @@ public class PlayerQuitListener implements Listener {
         } else {
             VanishManager.currentQuitMessage = event.getQuitMessage().replace(player.getName(), "%player%");
             if (ConfigHandler.isDiscordEnabled) {
-                sendQuitEmbed(player);
+                DiscordUtil.sendQuitEmbed(player);
             }
         }
-    }
-
-    public void sendQuitEmbed(Player player) {
-        TextChannel channel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
-        if (channel == null) return;
-
-        String playerName = player.getName();
-        String avatarUrl = "https://minotar.net/helm/" + playerName +  "/128.png";
-
-        String message = ConfigHandler.discordQuitMessage;
-        message = message.replace("%player%", playerName);
-
-        EmbedBuilder eb = new EmbedBuilder()
-                .setAuthor(message, null, avatarUrl)
-                .setColor(Color.RED);
-
-        channel.sendMessageEmbeds(eb.build()).queue();
-
     }
 }

@@ -5,6 +5,7 @@ import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.dependencies.jda.api.EmbedBuilder;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
 import me.ujun.config.ConfigHandler;
+import me.ujun.listeners.DiscordUtil;
 import me.ujun.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -88,38 +89,16 @@ public class AbsoluteVanishCMD implements CommandExecutor {
                 return true;
             }
             else if (args[0].equals("fakequitmessage")) {
-                String message = VanishManager.currentQuitMessage
-                        .replace("%player%", target.getName());
-
-                if (target.isOnline() && ConfigHandler.isDiscordEnabled) {
-                    Player onlineTarget = (Player) target;
-                    sendQuitEmbed(onlineTarget);
-                }
-
-                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', message));
+               VanishManager.sendFakeQuitMessage(target);
+               return true;
             }
-
+            else if (args[0].equals("fakejoinmessage")) {
+                VanishManager.sendFakeJoinMessage(target);
+                return true;
+            }
             return false;
         }
 
         return false;
-    }
-
-    public void sendQuitEmbed(Player player) {
-        TextChannel channel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
-        if (channel == null) return;
-
-        String playerName = player.getName();
-        String avatarUrl = "https://minotar.net/helm/" + playerName +  "/128.png";
-
-        String message = ConfigHandler.discordQuitMessage;
-        message = message.replace("%player%", playerName);
-
-        EmbedBuilder eb = new EmbedBuilder()
-                .setAuthor(message, null, avatarUrl)
-                .setColor(Color.RED);
-
-        channel.sendMessageEmbeds(eb.build()).queue();
-
     }
 }

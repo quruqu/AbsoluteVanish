@@ -20,6 +20,7 @@ public final class AbsoluteVanish extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         dataFile = new DataFile(getDataFolder());
         dataFile.loadSets(VanishManager.vanishedPlayers);
 

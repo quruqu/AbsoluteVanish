@@ -6,7 +6,13 @@ DiscordFirstJoinMessage: "%player% joined the server for the first time"
 DiscordJoinMessage: "%player% joined the server"
 DiscordQuitMessage: "%player% left the server"
 
-defaultQuitMessage: "&e%player% left the server"
+#this config set only fake join/quit message
+DefaultJoinMessage: "&e%player% joined the server"
+DefaultQuitMessage: "&e%player% left the server"
+
+#when vanish/unvanish send fake quit/join message
+SendFakeMessageOnVanish: true
+SendFakeMessageOnUnvanish: true
 
 TabCompleteFilterCommands:
   - /co

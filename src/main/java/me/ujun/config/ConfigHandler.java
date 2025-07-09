@@ -16,6 +16,9 @@ public class ConfigHandler {
     public static String discordFirstJoinMessage;
     public static boolean discordEnabled;
     public static String defaultQuitMessage;
+    public static String defaultJoinMessage;
+    public static boolean sendFakeMessageOnVanish;
+    public static boolean sendFakeMessageOnUnvanish;
     private List<String> filteredCommands;
     public static boolean isDiscordEnabled = false;
 
@@ -41,7 +44,11 @@ public class ConfigHandler {
         discordFirstJoinMessage = config.getString("DiscordFirstJoinMessage");
         discordEnabled = config.getBoolean("DiscordEnabled");
 
-        defaultQuitMessage = config.getString("defaultQuitMessage");
+        defaultQuitMessage = config.getString("DefaultQuitMessage");
+        defaultJoinMessage = config.getString("DefaultJoinMessage");
+
+        sendFakeMessageOnVanish = config.getBoolean("SendFakeMessageOnVanish");
+        sendFakeMessageOnUnvanish = config.getBoolean("SendFakeMessageOnUnvanish");
 
         filteredCommands = config.getStringList("TabCompleteFilterCommands");
 

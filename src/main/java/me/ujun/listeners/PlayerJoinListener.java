@@ -43,15 +43,16 @@ public class PlayerJoinListener implements Listener {
                 }
             }
         } else {
+            VanishManager.currentJoinMessage = event.getJoinMessage().replace(player.getName(), "%player%");
+
             //discordSRV
             if (ConfigHandler.isDiscordEnabled) {
                 if (player.hasPlayedBefore()) {
-                  sendJoinEmbed(player);
+                  DiscordUtil.sendJoinEmbed(player);
                 } else {
-                  sendFirstJoinEmbed(player);
+                  DiscordUtil.sendFirstJoinEmbed(player);
                 }
             }
-
 
             for (UUID uuid : vanishedPlayers) {
                 Player vanishedPlayer = Bukkit.getPlayer(uuid);
@@ -62,39 +63,5 @@ public class PlayerJoinListener implements Listener {
         }
     }
 
-    private void sendJoinEmbed(Player player) {
-        TextChannel channel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
-        if (channel == null) return;
-
-        String playerName = player.getName();
-        String avatarUrl = "https://minotar.net/helm/" + playerName +  "/128.png";
-
-        String message = ConfigHandler.discordJoinMessage;
-        message = message.replace("%player%", playerName);
-
-        EmbedBuilder eb = new EmbedBuilder()
-                .setAuthor(message, null, avatarUrl)
-                .setColor(Color.GREEN);
-
-        channel.sendMessageEmbeds(eb.build()).queue();
-    }
-
-    private void sendFirstJoinEmbed(Player player) {
-        TextChannel channel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
-        if (channel == null) return;
-
-        String playerName = player.getName();
-        String avatarUrl = "https://minotar.net/helm/" + playerName +  "/128.png";
-
-        String message = ConfigHandler.discordFirstJoinMessage;
-        message = message.replace("%player%", playerName);
-
-        EmbedBuilder eb = new EmbedBuilder()
-                .setAuthor(message, null, avatarUrl)
-                .setColor(Color.YELLOW);
-
-        channel.sendMessageEmbeds(eb.build()).queue();
-
-    }
 
 }
