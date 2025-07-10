@@ -38,7 +38,7 @@ public class PlayerJoinListener implements Listener {
             event.setJoinMessage(null);
 
             for (Player p : Bukkit.getOnlinePlayers()) {
-                if (!p.equals(player) || !VanishManager.isVanished(p)) {
+                if (!p.equals(player) && !VanishManager.isVanished(p)) {
                     p.hidePlayer(plugin, player);
                 }
             }

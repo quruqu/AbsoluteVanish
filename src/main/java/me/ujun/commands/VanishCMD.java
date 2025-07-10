@@ -30,11 +30,26 @@ public class VanishCMD implements CommandExecutor {
             return true;
         }
 
+        Boolean sendFakeMessage = null;
+
+        if (args.length == 1) {
+            sendFakeMessage = CommandUtil.toBooleanOrNull(args[0]);
+        }
 
         if (VanishManager.isVanished(player)) {
-            VanishManager.getInstance().unvanish(player);
+            if (sendFakeMessage == null) {
+                VanishManager.getInstance().unvanish(player);
+            }
+            else {
+                VanishManager.getInstance().unvanish(player, sendFakeMessage);
+            }
         } else {
-            VanishManager.getInstance().vanish(player);
+            if (sendFakeMessage == null) {
+                VanishManager.getInstance().vanish(player);
+            }
+            else {
+                VanishManager.getInstance().vanish(player, sendFakeMessage);
+            }
         }
         return true;
     }

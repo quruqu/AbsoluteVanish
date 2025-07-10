@@ -10,6 +10,7 @@ import me.ujun.listeners.*;
 import me.ujun.saving.DataFile;
 import me.ujun.utils.VanishManager;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -64,9 +65,17 @@ public final class AbsoluteVanish extends JavaPlugin {
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     if (VanishManager.isVanished(p)) {
                         p.sendActionBar("§7§l[ VANISHED ]");
+
+                        Entity target = p.getTargetEntity(10);
+                        if (target instanceof Player) {
+                            Player targetPlayer = (Player) target;
+                           if (VanishManager.isVanished(targetPlayer)) {
+                               p.sendActionBar("§7§l[ §f§l" + targetPlayer.getName() + ":§7§l VANISHED ]");
+                           }
+                        }
                     }
                 }
             }
-        }.runTaskTimer(this, 0L, 40L);
+        }.runTaskTimer(this, 0L, 20L);
     }
 }

@@ -48,7 +48,7 @@ public class AbsoluteVanishCMD implements CommandExecutor {
                 return true;
             }
         }
-        else if (args.length == 2) {
+        else if ((args.length <= 3)) {
             OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
 
             if (target == null) {
@@ -63,9 +63,20 @@ public class AbsoluteVanishCMD implements CommandExecutor {
                     return false;
                 }
 
+                Boolean sendFakeMessage = null;
+
+                if (args.length == 3) {
+                    sendFakeMessage = CommandUtil.toBooleanOrNull(args[2]);
+                }
+
                if (target.isOnline()) {
                    Player onlineTarget = (Player) target;
-                   VanishManager.getInstance().vanish(onlineTarget);
+
+                   if (sendFakeMessage == null) {
+                       VanishManager.getInstance().vanish(onlineTarget);
+                   } else {
+                       VanishManager.getInstance().vanish(onlineTarget, sendFakeMessage);
+                   }
                } else {
                    VanishManager.vanishedPlayers.add(target.getUniqueId());
                }
@@ -79,9 +90,19 @@ public class AbsoluteVanishCMD implements CommandExecutor {
                     return false;
                 }
 
+                Boolean sendFakeMessage = null;
+
+                if (args.length == 3) {
+                    sendFakeMessage = CommandUtil.toBooleanOrNull(args[2]);
+                }
+
                 if (target.isOnline()) {
                     Player onlineTarget = (Player) target;
-                    VanishManager.getInstance().unvanish(onlineTarget);
+                    if (sendFakeMessage == null) {
+                        VanishManager.getInstance().unvanish(onlineTarget);
+                    } else {
+                        VanishManager.getInstance().unvanish(onlineTarget, sendFakeMessage);
+                    }
                 } else {
                     VanishManager.vanishedPlayers.remove(target.getUniqueId());
                 }

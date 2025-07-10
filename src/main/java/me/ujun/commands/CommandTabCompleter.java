@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CommandTabCompleter implements TabCompleter {
 
@@ -22,7 +23,11 @@ public class CommandTabCompleter implements TabCompleter {
         List<String> completion = new ArrayList<>();
 
         if (command.getName().equals("vanish")) {
-            return completion;
+            if (args.length == 1) {
+                return Stream.of("true", "false")
+                        .filter(s -> s.startsWith(args[0].toLowerCase()))
+                        .collect(Collectors.toList());
+            }
         }
         else if (command.getName().equals("absolutevanish")) {
             if (args.length == 1) {
@@ -53,8 +58,12 @@ public class CommandTabCompleter implements TabCompleter {
                     }
                     return completion;
                 }
-                else {
-                    return completion;
+            }
+            else if (args.length == 3){
+                if (args[0].equals("vanish") || args[0].equals("unvanish")) {
+                    return Stream.of("true", "false")
+                            .filter(s -> s.startsWith(args[2].toLowerCase()))
+                            .collect(Collectors.toList());
                 }
             }
         }
