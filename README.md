@@ -12,12 +12,15 @@ Players who vanish via /vanish are not recognizable by anyone other than other v
 
 ## Commands
 ```
-/vanish
+/vanish <Boolean:sendFakeMessage>
 /absolutevanish reload
 /absolutevanish list
-/absolutevanish vanish <player>
-/absolutevanish unvanish <player>
+/absolutevanish vanish <player> <Boolean:sendFakeMessage>
+/absolutevanish unvanish <player> <Boolean:sendFakeMessage>
+/absolutevanish fakejoinmessage <player>
 /absolutevanish fakequitmessage <player>
+
+#<Boolean:sendFakeMessage>: Whether to automatically send fake join/quit message
 ```
 
 ## Permissions
