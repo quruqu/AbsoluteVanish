@@ -8,7 +8,7 @@ Players who vanish via /vanish are not recognizable by anyone other than other v
 - apply to playertab, tabcompleter, serverping
 - also compatible with discordSRV
 - also available to offline players
-- able to send fake quit message
+- able to send fake join/quit message
 
 ## Commands
 ```
