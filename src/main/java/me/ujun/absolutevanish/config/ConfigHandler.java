@@ -1,4 +1,4 @@
-package me.ujun.config;
+package me.ujun.absolutevanish.config;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;

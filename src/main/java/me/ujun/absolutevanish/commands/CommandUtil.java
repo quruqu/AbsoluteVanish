@@ -1,4 +1,4 @@
-package me.ujun.commands;
+package me.ujun.absolutevanish.commands;
 
 public class CommandUtil {
     public static Boolean toBooleanOrNull(String input) {

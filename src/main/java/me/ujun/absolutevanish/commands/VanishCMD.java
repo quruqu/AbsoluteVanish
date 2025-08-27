@@ -1,16 +1,12 @@
-package me.ujun.commands;
+package me.ujun.absolutevanish.commands;
 
-import me.ujun.AbsoluteVanish;
-import me.ujun.utils.VanishManager;
-import org.bukkit.Bukkit;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 

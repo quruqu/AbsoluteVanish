@@ -1,6 +1,6 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

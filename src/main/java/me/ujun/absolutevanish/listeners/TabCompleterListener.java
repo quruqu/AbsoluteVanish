@@ -1,13 +1,11 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
-import me.ujun.config.ConfigHandler;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerCommandSendEvent;
 import org.bukkit.event.server.TabCompleteEvent;
 
 import java.util.List;

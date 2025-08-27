@@ -1,15 +1,11 @@
-package me.ujun.utils;
+package me.ujun.absolutevanish.utils;
 
-import me.ujun.config.ConfigHandler;
-import me.ujun.listeners.DiscordUtil;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.listeners.DiscordUtil;
 import org.bukkit.*;
-import org.bukkit.entity.Display;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.TextDisplay;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.swing.text.StyledEditorKit;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -107,6 +103,18 @@ public class VanishManager {
         }
 
         Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', message));
+    }
+
+    public static void sendVanishedChat(String message) {
+        for (UUID id : vanishedPlayers) {
+            Player player = Bukkit.getPlayer(id);
+
+            if (player == null) {
+                continue;
+            }
+
+            player.sendMessage(message);
+        }
     }
 
 }

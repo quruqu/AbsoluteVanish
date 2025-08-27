@@ -1,7 +1,7 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
 import com.destroystokyo.paper.event.server.PaperServerListPingEvent;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

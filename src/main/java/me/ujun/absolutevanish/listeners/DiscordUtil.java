@@ -1,9 +1,9 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.dependencies.jda.api.EmbedBuilder;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
-import me.ujun.config.ConfigHandler;
+import me.ujun.absolutevanish.config.ConfigHandler;
 import org.bukkit.entity.Player;
 
 import java.awt.*;

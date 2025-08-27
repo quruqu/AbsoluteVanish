@@ -1,6 +1,6 @@
-package me.ujun.commands;
+package me.ujun.absolutevanish.commands;
 
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;

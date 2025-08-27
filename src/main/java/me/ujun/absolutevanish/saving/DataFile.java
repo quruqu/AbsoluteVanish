@@ -1,4 +1,4 @@
-package me.ujun.saving;
+package me.ujun.absolutevanish.saving;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -31,7 +31,6 @@ public class DataFile {
 
     public void saveSets(Set<UUID> vanished) {
         List<String> vanishedList = vanished.stream().map(UUID::toString).toList();
-
 
         config.set("vanished", vanishedList);
 

@@ -1,14 +1,14 @@
-package me.ujun;
+package me.ujun.absolutevanish;
 
 
 
-import me.ujun.commands.AbsoluteVanishCMD;
-import me.ujun.commands.CommandTabCompleter;
-import me.ujun.commands.VanishCMD;
-import me.ujun.config.ConfigHandler;
-import me.ujun.listeners.*;
-import me.ujun.saving.DataFile;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.commands.AbsoluteVanishCMD;
+import me.ujun.absolutevanish.commands.CommandTabCompleter;
+import me.ujun.absolutevanish.commands.VanishCMD;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.listeners.*;
+import me.ujun.absolutevanish.saving.DataFile;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

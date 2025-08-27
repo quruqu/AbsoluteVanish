@@ -1,18 +1,12 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
-import github.scarsz.discordsrv.DiscordSRV;
-import github.scarsz.discordsrv.dependencies.jda.api.EmbedBuilder;
-import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
-import me.ujun.AbsoluteVanish;
-import me.ujun.config.ConfigHandler;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-
-import java.awt.*;
 
 public class PlayerQuitListener implements Listener {
 
@@ -21,7 +15,10 @@ public class PlayerQuitListener implements Listener {
         Player player = event.getPlayer();
 
         if (VanishManager.isVanished(player)) {
+            String quitMessage = "§7[§bVanish§7]§f " + event.getQuitMessage();
+
             event.setQuitMessage(null);
+            VanishManager.sendVanishedChat(quitMessage);
         } else {
             VanishManager.currentQuitMessage = event.getQuitMessage().replace(player.getName(), "%player%");
             if (ConfigHandler.isDiscordEnabled) {

@@ -1,14 +1,8 @@
-package me.ujun.commands;
+package me.ujun.absolutevanish.commands;
 
-import com.google.common.graph.ValueGraphBuilder;
-import github.scarsz.discordsrv.DiscordSRV;
-import github.scarsz.discordsrv.dependencies.jda.api.EmbedBuilder;
-import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
-import me.ujun.config.ConfigHandler;
-import me.ujun.listeners.DiscordUtil;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;

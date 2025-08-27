@@ -1,11 +1,7 @@
-package me.ujun.listeners;
+package me.ujun.absolutevanish.listeners;
 
-import github.scarsz.discordsrv.DiscordSRV;
-import github.scarsz.discordsrv.dependencies.jda.api.EmbedBuilder;
-import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
-import me.ujun.AbsoluteVanish;
-import me.ujun.config.ConfigHandler;
-import me.ujun.utils.VanishManager;
+import me.ujun.absolutevanish.config.ConfigHandler;
+import me.ujun.absolutevanish.utils.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,7 +10,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.awt.*;
 import java.util.Set;
 import java.util.UUID;
 
@@ -35,7 +30,10 @@ public class PlayerJoinListener implements Listener {
 
         if (VanishManager.isVanished(player)) {
 
+            String joinMessage = "§7[§bVanish§7]§f " + event.getJoinMessage();
+
             event.setJoinMessage(null);
+            VanishManager.sendVanishedChat(joinMessage);
 
             for (Player p : Bukkit.getOnlinePlayers()) {
                 if (!p.equals(player) && !VanishManager.isVanished(p)) {
