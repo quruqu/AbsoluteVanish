@@ -20,5 +20,5 @@ commands:
     permission: absolutevanish.vanish
     description: Hides a player from other players
   absolutevanish:
-    permission: abolutevanish.absolutevanish
+    permission: absolutevanish.absolutevanish
     description: manage the AbsoluteVanish plugin
